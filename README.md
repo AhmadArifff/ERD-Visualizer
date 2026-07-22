@@ -1,52 +1,70 @@
 # ERD Visualizer
 
-ERD Visualizer adalah aplikasi web interaktif untuk memetakan skema database dari file SQL secara visual. Aplikasi ini membantu Anda melihat struktur tabel, relasi antar tabel, serta atribut utama dan foreign key dengan cepat.
+ERD Visualizer adalah aplikasi web interaktif yang membantu Anda memvisualisasikan skema database dari file SQL secara cepat dan langsung di browser. Aplikasi ini cocok untuk analisis skema, debugging relasi tabel, dan memahami struktur data tanpa menyeting server tambahan.
 
-## Fitur Utama
+## Kelebihan Proyek
 
-- Import file SQL atau TXT
-- Mendukung skema MySQL dan PostgreSQL
-- Menampilkan tabel beserta relasinya secara visual
-- Ringkasan relasi database otomatis dari foreign key dan kecocokan nilai data
-- Pratinjau query JOIN live dan hasil baris data dari file SQL
-- Pencarian tabel dan navigasi zoom
-- Bekerja secara lokal di browser tanpa perlu server
+- Import file SQL atau TXT langsung dari browser
+- Mendukung format MySQL dan PostgreSQL
+- Menampilkan tabel, kolom, primary key, foreign key, dan relasi secara visual
+- Menemukan relasi tersembunyi dari kecocokan nilai data (tanpa FK eksplisit)
+- Ringkasan relasi lengkap dengan visual dan query JOIN otomatis
+- Panel pencarian tabel, zoom, dan auto-fit layar
+- Semua berjalan lokal tanpa perlu backend
 
-## Cara Menggunakan
+## Cara Menjalankan
 
-1. Buka file [erd-visualizer.html](erd-visualizer.html) di browser.
-2. Klik tombol Import SQL untuk mengunggah file skema database Anda.
-3. Atau pilih Contoh Skema untuk melihat tampilan demo.
-4. Jelajahi visualisasi tabel dan relasi yang dihasilkan.
-5. Buka modul Ringkasan Relasi untuk melihat query JOIN live, nilai contoh, dan hasil data yang terhubung.
+1. Buka file `erd-visualizer.html` di browser modern.
+2. Klik tombol `Import SQL` untuk memilih file skema database Anda.
+3. Atau klik `Contoh Skema` untuk melihat demo internal.
+4. Gunakan panel samping untuk mencari dan memilih tabel.
+5. Buka ringkasan relasi untuk melihat query JOIN dan contoh data yang terhubung.
 
 ## Struktur Folder
 
-- [erd-visualizer.html](erd-visualizer.html) — file utama aplikasi
-- [tampilan](tampilan) — folder berisi screenshot hasil visualisasi
+- `erd-visualizer.html` — file aplikasi utama
+- `tampilan/` — folder berisi screenshot tampilan aplikasi
 
-## Tampilan Aplikasi
+## Screenshot & Penjelasan
 
-### Semua tabel
+### 1. Tampilan Visualisasi Semua Tabel
 
-![Tampilan ERD Visualizer semua tabel](tampilan/erd%20flow%20visual%20all%20tabel.png)
+Menampilkan seluruh tabel dan relasi yang terdeteksi dalam satu tampilan diagram.
 
-### Tabel Orders
+![Visualisasi Semua Tabel](tampilan/erd%20flow%20visual%20all%20tabel.png)
 
-![Tampilan ERD Visualizer tabel orders](tampilan/erd%20flow%20visual%20tabel%20orders.png)
+### 2. Fokus pada Tabel `orders`
 
-### Ringkasan Relasi Database
+Menunjukkan detail tabel `orders` dan relasinya, termasuk informasi kolom dan koneksi ke tabel lain.
 
-Tampilan ringkasan relasi database menunjukkan hubungan antar tabel secara mendetail, termasuk daftar semua relasi yang ditemukan dari foreign key dan kecocokan nilai data.
+![Tabel Orders](tampilan/erd%20flow%20visual%20tabel%20orders.png)
 
-![Ringkasan Relasi Database](tampilan/erd%20summary%20relations.png)
+### 3. Ringkasan Relasi Skema (Primary Key ↔ Foreign Key)
 
-### Contoh Query dan Hasil Data
+Menampilkan relasi resmi yang diambil dari constraint primary key dan foreign key di dalam skema SQL.
 
-Modul ini menampilkan preview query JOIN yang dihasilkan secara otomatis berdasarkan relasi tabel, serta menampilkan sampel hasil data yang terhubung antar tabel untuk validasi data.
+![Relasi Skema](tampilan/Relasi%20Skema%20(Primary%20Key%20%E2%94%94%20Foreign%20Key).png)
 
-![Contoh Query dan Hasil Data](tampilan/erd%20summary%20query.png)
+### 4. Ringkasan Relasi dari Kecocokan Data
+
+Menunjukkan relasi yang ditemukan melalui kecocokan nilai antar kolom, meskipun tidak ada foreign key eksplisit.
+
+![Relasi dari Kecocokan Data](tampilan/Relasi%20dari%20Kecocokan%20Data%20(tanpa%20FK%20eksplisit).png)
+
+### 5. Pilih Tabel & Kolom untuk Join
+
+UI ini menunjukkan cara memilih tabel dan kolom yang ingin diikutkan dalam ringkasan join dan analisis data.
+
+![Pilih Tabel & Kolom](tampilan/Pilih%20tabel%20%26%20kolom%20yang%20ingin%20diikutkan%20(centang%20tabel%2C%20klik%20kolom%20untuk%20toggle).png)
+
+### 6. Pilih Nilai Contoh untuk Filter Query
+
+Menampilkan pemilihan nilai sample yang digunakan untuk membangun query `WHERE` dan memfilter hasil join secara dinamis.
+
+![Pilih Nilai Contoh untuk WHERE](tampilan/Pilih%20nilai%20contoh%20untuk%20WHERE.png)
 
 ## Catatan
 
-Proyek ini dibuat sebagai alat visualisasi ERD sederhana dan dapat dikembangkan lebih lanjut sesuai kebutuhan database Anda.
+- Semua pengolahan data dilakukan di browser, sehingga data Anda tidak dikirim ke server eksternal.
+- Jika screenshot tidak tampil, pastikan nama file dan path `tampilan/` tetap sesuai.
+- Proyek ini dapat dikembangkan lebih lanjut dengan fitur ekspor JSON, support ERD tambahan, dan integrasi database.
