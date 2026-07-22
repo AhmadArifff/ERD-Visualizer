@@ -37,9 +37,13 @@ ERD Visualizer adalah aplikasi web interaktif untuk memetakan skema database dar
 
 ### Ringkasan Relasi Database
 
+Tampilan ringkasan relasi database menunjukkan hubungan antar tabel secara mendetail, termasuk daftar semua relasi yang ditemukan dari foreign key dan kecocokan nilai data.
+
 ![Ringkasan Relasi Database](tampilan/erd%20summary%20relations.png)
 
 ### Contoh Query dan Hasil Data
+
+Modul ini menampilkan preview query JOIN yang dihasilkan secara otomatis berdasarkan relasi tabel, serta menampilkan sampel hasil data yang terhubung antar tabel untuk validasi data.
 
 ![Contoh Query dan Hasil Data](tampilan/erd%20summary%20query.png)
 
