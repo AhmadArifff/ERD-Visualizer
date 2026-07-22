@@ -7,6 +7,8 @@ ERD Visualizer adalah aplikasi web interaktif untuk memetakan skema database dar
 - Import file SQL atau TXT
 - Mendukung skema MySQL dan PostgreSQL
 - Menampilkan tabel beserta relasinya secara visual
+- Ringkasan relasi database otomatis dari foreign key dan kecocokan nilai data
+- Pratinjau query JOIN live dan hasil baris data dari file SQL
 - Pencarian tabel dan navigasi zoom
 - Bekerja secara lokal di browser tanpa perlu server
 
@@ -16,6 +18,7 @@ ERD Visualizer adalah aplikasi web interaktif untuk memetakan skema database dar
 2. Klik tombol Import SQL untuk mengunggah file skema database Anda.
 3. Atau pilih Contoh Skema untuk melihat tampilan demo.
 4. Jelajahi visualisasi tabel dan relasi yang dihasilkan.
+5. Buka modul Ringkasan Relasi untuk melihat query JOIN live, nilai contoh, dan hasil data yang terhubung.
 
 ## Struktur Folder
 
@@ -31,6 +34,14 @@ ERD Visualizer adalah aplikasi web interaktif untuk memetakan skema database dar
 ### Tabel Orders
 
 ![Tampilan ERD Visualizer tabel orders](tampilan/erd%20flow%20visual%20tabel%20orders.png)
+
+### Ringkasan Relasi Database
+
+![Ringkasan Relasi Database](tampilan/erd%20summary%20relations.png)
+
+### Contoh Query dan Hasil Data
+
+![Contoh Query dan Hasil Data](tampilan/erd%20summary%20query.png)
 
 ## Catatan
 
